@@ -819,6 +819,21 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
+                            <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ArJ-6J-q5Y">
+                                <rect key="frame" x="357" y="12" width="163" height="32"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <buttonCell key="cell" type="push" title="Set Computer Name" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="2RV-Hh-Vsz">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="setCompName:" target="XfG-lQ-9wD" id="Ixh-T5-XRJ"/>
+                                </connections>
+                            </button>
+                            <progressIndicator wantsLayer="YES" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" maxValue="100" displayedWhenStopped="NO" bezeled="NO" indeterminate="YES" controlSize="small" style="spinning" translatesAutoresizingMaskIntoConstraints="NO" id="rk6-M8-E3s">
+                                <rect key="frame" x="522" y="22" width="16" height="16"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                            </progressIndicator>
                         </subviews>
                     </view>
                     <connections>
@@ -832,6 +847,7 @@
                         <outlet property="departOptions" destination="5Ss-gI-eWJ" id="g45-vL-dd0"/>
                         <outlet property="departPopUp" destination="5Ss-gI-eWJ" id="xYt-Rs-XH9"/>
                         <outlet property="departmentLBL" destination="RoG-T1-hTm" id="7d5-D4-HBl"/>
+                        <outlet property="nameProgress" destination="rk6-M8-E3s" id="zbQ-0l-fg5"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

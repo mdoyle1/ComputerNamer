@@ -111,6 +111,9 @@ class ViewController: NSViewController {
         }
     }
     
+    
+    
+    //Department Selection Pop Up Button
     @IBOutlet weak var departOptions: NSPopUpButton!
     @IBOutlet weak var computerName: NSTextField!
     
@@ -125,7 +128,42 @@ class ViewController: NSViewController {
         print (prefix)
     }
     
+    
+    
+    
+    @IBOutlet weak var nameProgress: NSProgressIndicator!
+    @IBAction func setCompName(_ sender: NSButton) {
+        
+       
+        /*
+        let path = "/usr/bin"
+        let compName = computerName.stringValue
+        let arguments = ["sudo", "jamf", "setcomputername", "-name", compName]
+       
+        sender.isEnabled = false
+        nameProgress.startAnimation(self)
+        let task = Process.launchedProcess(launchPath: path, arguments: arguments )
+        task.waitUntilExit()
+        sender.isEnabled = true
+        nameProgress.stopAnimation(self)
+        */
+        
+        let compName = computerName.stringValue
+        
+        func nameComputer () {
+            sender.isEnabled = false
+            nameProgress.startAnimation(self)
+            NSAppleScript(source: "do shell script \"/usr/local/bin/jamf setcomputername -name \(compName)\" with administrator "+"privileges")!.executeAndReturnError(nil)
+        }
 
+        nameComputer()
+        sender.isEnabled = true
+        nameProgress.stopAnimation(self)
+        
+    }
+    
+    
+    
 
 }
 
