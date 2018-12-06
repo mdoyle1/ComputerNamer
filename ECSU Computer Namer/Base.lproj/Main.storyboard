@@ -813,6 +813,18 @@
                                 <rect key="frame" x="522" y="22" width="16" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </progressIndicator>
+                            <popUpButton hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCQ-iL-FSd">
+                                <rect key="frame" x="115" y="151" width="176" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="8pm-jB-Egf">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="2Z5-B8-AN8"/>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="buildingLabs:" target="XfG-lQ-9wD" id="Hko-09-0Q4"/>
+                                </connections>
+                            </popUpButton>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w5h-Zy-M5o">
                                 <rect key="frame" x="30" y="117" width="121" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
@@ -831,15 +843,24 @@
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
                             </textField>
-                            <popUpButton hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCQ-iL-FSd">
-                                <rect key="frame" x="115" y="151" width="176" height="25"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="8pm-jB-Egf">
-                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
-                                    <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="2Z5-B8-AN8"/>
-                                </popUpButtonCell>
-                            </popUpButton>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="srR-35-WOv">
+                                <rect key="frame" x="210" y="117" width="95" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Room Number:" id="jee-a8-4A9">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nGg-i0-nAq">
+                                <rect key="frame" x="311" y="114" width="30" height="22"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="vHj-ch-xKA">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
                         </subviews>
                     </view>
                     <connections>
@@ -858,6 +879,8 @@
                         <outlet property="departPopUp" destination="5Ss-gI-eWJ" id="xYt-Rs-XH9"/>
                         <outlet property="departmentLBL" destination="RoG-T1-hTm" id="7d5-D4-HBl"/>
                         <outlet property="nameProgress" destination="rk6-M8-E3s" id="zbQ-0l-fg5"/>
+                        <outlet property="roomNumberFLD" destination="nGg-i0-nAq" id="KQm-iO-8Fx"/>
+                        <outlet property="roomNumberLBL" destination="srR-35-WOv" id="JXA-2N-3Ve"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>

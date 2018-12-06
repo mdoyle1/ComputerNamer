@@ -24,6 +24,13 @@ var checked = NSControl.StateValue(rawValue: 1)
 var unchecked = NSControl.StateValue(rawValue: 0)
 
 
+// Last 6 of computer serial #
+let serialEnd = serialNumber.endIndex
+let serialStart = serialNumber.index(serialEnd, offsetBy: -6)
+let range = Range(uncheckedBounds: (lower: serialStart, upper: serialEnd))
+let lastSix = serialNumber[range]
+
+
 //Buildings and Departments
 
 var buildingTable = [
@@ -144,9 +151,10 @@ class ViewController: NSViewController {
     @IBOutlet weak var buildingLabel: NSTextField!
     @IBOutlet weak var departmentLBL: NSTextField!
     @IBOutlet weak var computerNumLBL: NSTextField!
+    @IBOutlet weak var roomNumberLBL: NSTextField!
+    
     
     //Pop-up Menus
-    
     @IBOutlet weak var departPopUp: NSPopUpButton!
     @IBOutlet weak var departOptions: NSPopUpButton!
     @IBOutlet weak var buildingPopUp: NSPopUpButton!
@@ -154,8 +162,29 @@ class ViewController: NSViewController {
     //Text Fields
     @IBOutlet weak var computerName: NSTextField!
     @IBOutlet weak var compNumberField: NSTextField!
+    @IBOutlet weak var roomNumberFLD: NSTextField!
     
     
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        // Do any additional setup after loading the view.
+        
+        //Add items to Pop-up menus
+        for department in departSorted {
+            departOptions.addItems(withTitles: ["\(department)"] )
+        }
+        
+        for building in buildingSorted {
+            buildingPopUp.addItems(withTitles: ["\(building)"])
+        }
+        
+    }
+    
+    override var representedObject: Any? {
+        didSet {
+            // Update the view, if already loaded.
+        }
+    }
     
     
     
@@ -172,6 +201,8 @@ class ViewController: NSViewController {
             buildingPopUp.isHidden = true
             computerNumLBL.isHidden = true
             compNumberField.isHidden = true
+            roomNumberFLD.isHidden = true
+            roomNumberLBL.isHidden = true
             chkLab.state = unchecked
             chkStudentWorker.state = unchecked
             chkOther.state = unchecked
@@ -179,9 +210,12 @@ class ViewController: NSViewController {
         } else {
             buildingLabel.isHidden = false
         }
-        
-        
     }
+    
+    
+    
+    
+    
     
     //Student Worker Check Box
     @IBAction func studentWorkFunc(_ sender: NSButton) {
@@ -196,11 +230,17 @@ class ViewController: NSViewController {
             computerNumLBL.isHidden = true
             buildingLabel.isHidden = true
             buildingPopUp.isHidden = true
+            roomNumberFLD.isHidden = true
+            roomNumberLBL.isHidden = true
             chkFacultyStaff.state = unchecked
             chkLab.state = unchecked
             chkOther.state = unchecked
         }
     }
+    
+    
+    
+    
     
     
     
@@ -216,77 +256,40 @@ class ViewController: NSViewController {
             buildingPopUp.isHidden = false
             compNumberField.isHidden = false
             computerNumLBL.isHidden = false
+            roomNumberFLD.isHidden = false
+            roomNumberLBL.isHidden = false
             chkFacultyStaff.state = unchecked
             chkStudentWorker.state = unchecked
             chkOther.state = unchecked
-            
-            
         }
     }
     
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
-      
-        //Add items to Pop-up menus
-        for department in departSorted {
-            departOptions.addItems(withTitles: ["\(department)"] )
-        }
+    //Building Labs and Res Hall Pop Up Button
+    @IBAction func buildingLabs(_ sender: NSPopUpButton) {
+        let prefix = buildingTable[buildingPopUp.titleOfSelectedItem!]
+        let compNum = compNumberField.stringValue
+        computerName.stringValue = (setPre+prefix!+compNum)
+        print (prefix as Any)
         
-        for building in buildingSorted {
-            buildingPopUp.addItems(withTitles: ["\(building)"])
-        }
-        
-       
-        
-    }
-
-    override var representedObject: Any? {
-        didSet {
-        // Update the view, if already loaded.
-        }
     }
     
     
     
     //Department Selection Pop Up Button
-
-    
-    
-    
     @IBAction func departSelect(_ sender: NSPopUpButton) {
-        var department = departOptions.titleOfSelectedItem
+       // var department = departOptions.titleOfSelectedItem
         let prefix = departmentTable[departOptions.titleOfSelectedItem!]
-        let serialEnd = serialNumber.endIndex
-        let serialStart = serialNumber.index(serialEnd, offsetBy: -6)
-        let range = Range(uncheckedBounds: (lower: serialStart, upper: serialEnd))
-        let lastSix = serialNumber[range]
-        computerName.stringValue = (setPre+prefix!+lastSix ?? nil)!
-        print (prefix)
+       
+        computerName.stringValue = (setPre+prefix!+lastSix )
+        print (prefix as Any)
     }
     
     
     
-    
+    //Set Computer Name!!
     @IBOutlet weak var nameProgress: NSProgressIndicator!
     @IBAction func setCompName(_ sender: NSButton) {
-        
-       
-        /*
-        let path = "/usr/bin"
-        let compName = computerName.stringValue
-        let arguments = ["sudo", "jamf", "setcomputername", "-name", compName]
-       
-        sender.isEnabled = false
-        nameProgress.startAnimation(self)
-        let task = Process.launchedProcess(launchPath: path, arguments: arguments )
-        task.waitUntilExit()
-        sender.isEnabled = true
-        nameProgress.stopAnimation(self)
-        */
-        
         let compName = computerName.stringValue
         
         func nameComputer () {
@@ -294,15 +297,9 @@ class ViewController: NSViewController {
             nameProgress.startAnimation(self)
             NSAppleScript(source: "do shell script \"/usr/local/bin/jamf setcomputername -name \(compName)\" with administrator "+"privileges")!.executeAndReturnError(nil)
         }
-
         nameComputer()
         sender.isEnabled = true
         nameProgress.stopAnimation(self)
-        
     }
-    
-    
-    
-
 }
 
