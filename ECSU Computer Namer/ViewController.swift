@@ -31,6 +31,13 @@ let range = Range(uncheckedBounds: (lower: serialStart, upper: serialEnd))
 let lastSix = serialNumber[range]
 
 
+// Get last word of building name
+let buildType = buildingSorted[0]
+let split = buildType.split(separator: " ")
+let last = String(split.suffix(1).joined(separator: [" "]))
+
+
+
 //Buildings and Departments
 
 var buildingTable = [
@@ -128,7 +135,7 @@ let departmentCount = departmentTable.count
 let buildingCount = buildingTable.count
 
 
-//Set Departments to an array
+//Set Departments and Buildings to an array
 let departmentKeys = Array(departmentTable.keys)
 let buildingKeys = Array(buildingTable.keys)
 
@@ -248,6 +255,7 @@ class ViewController: NSViewController {
     @IBAction func labFunc(_ sender: NSButton) {
         
         setPre = "ELAB"
+        
         
         if chkLab.state == checked {
             departPopUp.isHidden = true
