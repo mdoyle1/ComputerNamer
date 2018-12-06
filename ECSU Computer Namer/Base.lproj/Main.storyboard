@@ -745,6 +745,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="labFunc:" target="XfG-lQ-9wD" id="LRP-gF-LdH"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pYK-0r-vXr">
                                 <rect key="frame" x="500" y="217" width="57" height="18"/>
@@ -768,34 +771,10 @@
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ss-gI-eWJ">
                                 <rect key="frame" x="115" y="151" width="176" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="Accessability" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="tQe-BO-CXZ" id="bfk-fM-HEp">
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="bfk-fM-HEp">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="AIe-u8-YlC">
-                                        <items>
-                                            <menuItem title="Accessability" state="on" id="tQe-BO-CXZ">
-                                                <modifierMask key="keyEquivalentModifierMask"/>
-                                            </menuItem>
-                                            <menuItem title="Accounting" id="UzW-3O-8Wx"/>
-                                            <menuItem title="Academic Affairs" id="k8I-0V-vbf"/>
-                                            <menuItem title="Advising Center" id="HcR-lp-C0L"/>
-                                            <menuItem title="School of Arts &amp; Sciences" id="Q6F-S9-qHK"/>
-                                            <menuItem title="Athletics" id="TOB-LS-sac"/>
-                                            <menuItem title="Biology" id="LaP-nZ-vhm"/>
-                                            <menuItem title="Book Store" id="Msj-JZ-nbY"/>
-                                            <menuItem title="Business Administration" id="d8L-BE-fob"/>
-                                            <menuItem title="Card Services" id="zhZ-GK-xAA"/>
-                                            <menuItem title="Center Early Childhood Educ" id="WZR-ko-irv"/>
-                                            <menuItem title="Child &amp; Family Development Ctr" id="7bd-io-47p"/>
-                                            <menuItem title="Communication" id="C9Q-ko-qdX"/>
-                                            <menuItem title="Counseling &amp; Psycholocial Svcs" id="5gi-Jb-gaR"/>
-                                            <menuItem title="Economics" id="6Wk-3X-OFc"/>
-                                            <menuItem title="Education" id="axE-BC-T5m"/>
-                                            <menuItem title="English" id="AvV-s7-tlo"/>
-                                            <menuItem title="Environmental Earth Science" id="Snf-le-Smn"/>
-                                            <menuItem title="School of Educ &amp; Prof Studies" id="Fmj-QF-Leg"/>
-                                        </items>
-                                    </menu>
+                                    <menu key="menu" id="AIe-u8-YlC"/>
                                 </popUpButtonCell>
                                 <connections>
                                     <action selector="departSelect:" target="XfG-lQ-9wD" id="KZ3-tf-GQZ"/>
@@ -811,7 +790,7 @@
                                 </textFieldCell>
                             </textField>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="uWy-sH-nGD">
-                                <rect key="frame" x="310" y="156" width="57" height="17"/>
+                                <rect key="frame" x="30" y="156" width="57" height="17"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <textFieldCell key="cell" lineBreakMode="clipping" title="Building:" id="vsf-Cc-UvI">
                                     <font key="font" metaFont="system"/>
@@ -834,16 +813,47 @@
                                 <rect key="frame" x="522" y="22" width="16" height="16"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
                             </progressIndicator>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="w5h-Zy-M5o">
+                                <rect key="frame" x="30" y="117" width="121" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Computer Number:" id="77n-ww-cIF">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <textField hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="UoF-9s-oag">
+                                <rect key="frame" x="154" y="115" width="35" height="22"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" selectable="YES" editable="YES" sendsActionOnEndEditing="YES" borderStyle="bezel" drawsBackground="YES" id="UOK-zm-h9u">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCQ-iL-FSd">
+                                <rect key="frame" x="115" y="151" width="176" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="8pm-jB-Egf">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="2Z5-B8-AN8"/>
+                                </popUpButtonCell>
+                            </popUpButton>
                         </subviews>
                     </view>
                     <connections>
                         <outlet property="buildingLabel" destination="uWy-sH-nGD" id="UqH-pm-vUb"/>
                         <outlet property="buildingLable" destination="uWy-sH-nGD" id="j5m-2I-bu8"/>
+                        <outlet property="buildingPopUp" destination="MCQ-iL-FSd" id="f2M-Eb-XVG"/>
                         <outlet property="chkFacultyStaff" destination="OSn-cf-bBn" id="5HG-IW-XmZ"/>
                         <outlet property="chkLab" destination="vej-Eq-0Tb" id="lVD-PP-sJE"/>
                         <outlet property="chkOther" destination="pYK-0r-vXr" id="Q5f-aB-9Wm"/>
                         <outlet property="chkStudentWorker" destination="AGx-aI-Pdx" id="6GS-ce-TTs"/>
+                        <outlet property="compNumberField" destination="UoF-9s-oag" id="6oO-zz-CtC"/>
                         <outlet property="computerName" destination="luX-Pw-ccq" id="LRA-Uk-Cej"/>
+                        <outlet property="computerNumLBL" destination="w5h-Zy-M5o" id="qsE-ti-yXK"/>
+                        <outlet property="computerNumber" destination="UoF-9s-oag" id="QYY-D1-9Jr"/>
                         <outlet property="departOptions" destination="5Ss-gI-eWJ" id="g45-vL-dd0"/>
                         <outlet property="departPopUp" destination="5Ss-gI-eWJ" id="xYt-Rs-XH9"/>
                         <outlet property="departmentLBL" destination="RoG-T1-hTm" id="7d5-D4-HBl"/>

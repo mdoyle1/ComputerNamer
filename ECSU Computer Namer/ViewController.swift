@@ -20,8 +20,33 @@ var studentWorker = "EDF"
 var lab = "ELAB"
 var other = ""
 var setPre = "E"
+var checked = NSControl.StateValue(rawValue: 1)
+var unchecked = NSControl.StateValue(rawValue: 0)
 
-//Departments
+
+//Buildings and Departments
+
+var buildingTable = [
+    "Communication Building": "COMM-",
+    "Center for Early Childhood Ed.": "CECE-",
+    "Fine Arts Instructional Center": "FAIC-",
+    "J. Eugene Smith Library": "LIB-",
+    "Science Building": "SB-",
+    "Sports Center": "SPRT-",
+    "Webb Hall": "WEBB-",
+    "Burnap Hall": "BURN-",
+    "Burr Hall": "BURR-",
+    "Constitution Hall": "CONS-",
+    "Crandall Hall": "CRAN-",
+    "High Rise": "HRIS-",
+    "Laurel Hall": "LAUR-",
+    "Mead Hall": "MEAD-",
+    "Niejadik Hall": "NEI-",
+    "Noble Hall": "NOBL-",
+    "Nutmeg Hall": "NUTM-",
+    "Occum Hall": "OCCUM-",
+    "Winthrop Hall": "WIN-"
+]
 
 var departmentTable = [
     "Accessability": "ACCS",
@@ -89,6 +114,23 @@ var departmentTable = [
     "Womens Center": "WNCT",
     "World Language and Cultures": "WOLC"
 ]
+
+
+//Total # of Departments and buildings...
+let departmentCount = departmentTable.count
+let buildingCount = buildingTable.count
+
+
+//Set Departments to an array
+let departmentKeys = Array(departmentTable.keys)
+let buildingKeys = Array(buildingTable.keys)
+
+
+//Sort the Array in alphabetical order
+let departSorted = departmentKeys.sorted { $0 < $1 }
+let buildingSorted = buildingKeys.sorted { $0 < $1 }
+
+
 class ViewController: NSViewController {
     
     //Checkboxes
@@ -96,30 +138,43 @@ class ViewController: NSViewController {
     @IBOutlet weak var chkStudentWorker: NSButton!
     @IBOutlet weak var chkLab: NSButton!
     @IBOutlet weak var chkOther: NSButton!
+
     
     //Labels
     @IBOutlet weak var buildingLabel: NSTextField!
     @IBOutlet weak var departmentLBL: NSTextField!
+    @IBOutlet weak var computerNumLBL: NSTextField!
     
     //Pop-up Menus
     
     @IBOutlet weak var departPopUp: NSPopUpButton!
+    @IBOutlet weak var departOptions: NSPopUpButton!
+    @IBOutlet weak var buildingPopUp: NSPopUpButton!
+
+    //Text Fields
+    @IBOutlet weak var computerName: NSTextField!
+    @IBOutlet weak var compNumberField: NSTextField!
     
-    //Actions
     
     
-    //Faculty Staff
+    
+    
+    //Faculty Staff Check Box
     @IBAction func facultyStaffFunc(_ sender: NSButton) {
         
         setPre = "E"
         
         if chkFacultyStaff.state == NSControl.StateValue(rawValue: 1){
-            //Show
+            
             departmentLBL.isHidden = false
             departPopUp.isHidden = false
-            
-            //Hide
             buildingLabel.isHidden = true
+            buildingPopUp.isHidden = true
+            computerNumLBL.isHidden = true
+            compNumberField.isHidden = true
+            chkLab.state = unchecked
+            chkStudentWorker.state = unchecked
+            chkOther.state = unchecked
             
         } else {
             buildingLabel.isHidden = false
@@ -128,33 +183,63 @@ class ViewController: NSViewController {
         
     }
     
-    //Student Worker
+    //Student Worker Check Box
     @IBAction func studentWorkFunc(_ sender: NSButton) {
         
         setPre = "EDF"
         
-        if chkStudentWorker.state == NSControl.StateValue(rawValue: 1){
+        if chkStudentWorker.state == checked {
+            buildingPopUp.isHidden = true
             departPopUp.isHidden = false
             departmentLBL.isHidden = false
-            chkFacultyStaff.state = NSControl.StateValue(rawValue: 0)
+            compNumberField.isHidden = true
+            computerNumLBL.isHidden = true
+            buildingLabel.isHidden = true
+            buildingPopUp.isHidden = true
+            chkFacultyStaff.state = unchecked
+            chkLab.state = unchecked
+            chkOther.state = unchecked
         }
     }
+    
+    
+    
+    //Lab Check Box
+    @IBAction func labFunc(_ sender: NSButton) {
+        
+        setPre = "ELAB"
+        
+        if chkLab.state == checked {
+            departPopUp.isHidden = true
+            buildingLabel.isHidden = false
+            departmentLBL.isHidden = true
+            buildingPopUp.isHidden = false
+            compNumberField.isHidden = false
+            computerNumLBL.isHidden = false
+            chkFacultyStaff.state = unchecked
+            chkStudentWorker.state = unchecked
+            chkOther.state = unchecked
+            
+            
+        }
+    }
+    
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+      
+        //Add items to Pop-up menus
+        for department in departSorted {
+            departOptions.addItems(withTitles: ["\(department)"] )
+        }
         
-        //Total # of Departments
-        let departmentCount = departmentTable.count
+        for building in buildingSorted {
+            buildingPopUp.addItems(withTitles: ["\(building)"])
+        }
         
-        //Set Departments to an array
-        let departmentKeys = Array(departmentTable.keys)
-       //Sort the Array in alphabetical order
-        let departSorted = departmentKeys.sorted { $0 < $1 }
-        
-        print(departSorted[0])
-        print(departmentCount)
+       
         
     }
 
@@ -167,16 +252,11 @@ class ViewController: NSViewController {
     
     
     //Department Selection Pop Up Button
-    @IBOutlet weak var departOptions: NSPopUpButton!
-   
-   
+
     
-    @IBOutlet weak var computerName: NSTextField!
+    
     
     @IBAction func departSelect(_ sender: NSPopUpButton) {
-        
-        departOptions.addItems(withTitles: ["\(departmentTable)"])
-        
         var department = departOptions.titleOfSelectedItem
         let prefix = departmentTable[departOptions.titleOfSelectedItem!]
         let serialEnd = serialNumber.endIndex
