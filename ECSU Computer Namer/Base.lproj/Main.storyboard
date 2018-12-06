@@ -771,10 +771,16 @@
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ss-gI-eWJ">
                                 <rect key="frame" x="115" y="151" width="176" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="bfk-fM-HEp">
+                                <popUpButtonCell key="cell" type="push" title="Select a department..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="8Dk-SF-CDp" id="bfk-fM-HEp">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="AIe-u8-YlC"/>
+                                    <menu key="menu" id="AIe-u8-YlC">
+                                        <items>
+                                            <menuItem title="Select a department..." id="8Dk-SF-CDp">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                        </items>
+                                    </menu>
                                 </popUpButtonCell>
                                 <connections>
                                     <action selector="departSelect:" target="XfG-lQ-9wD" id="KZ3-tf-GQZ"/>
@@ -816,10 +822,16 @@
                             <popUpButton hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCQ-iL-FSd">
                                 <rect key="frame" x="115" y="151" width="176" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" id="8pm-jB-Egf">
+                                <popUpButtonCell key="cell" type="push" title="Select a building..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="H3c-1d-paB" id="8pm-jB-Egf">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
-                                    <menu key="menu" id="2Z5-B8-AN8"/>
+                                    <menu key="menu" id="2Z5-B8-AN8">
+                                        <items>
+                                            <menuItem title="Select a building..." id="H3c-1d-paB">
+                                                <modifierMask key="keyEquivalentModifierMask"/>
+                                            </menuItem>
+                                        </items>
+                                    </menu>
                                 </popUpButtonCell>
                                 <connections>
                                     <action selector="buildingLabs:" target="XfG-lQ-9wD" id="Hko-09-0Q4"/>
@@ -842,6 +854,9 @@
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <action selector="computerNumber:" target="XfG-lQ-9wD" id="ACQ-yw-955"/>
+                                </connections>
                             </textField>
                             <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="srR-35-WOv">
                                 <rect key="frame" x="210" y="117" width="95" height="17"/>
@@ -860,6 +875,9 @@
                                     <color key="textColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
                                     <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
                                 </textFieldCell>
+                                <connections>
+                                    <action selector="roomNumRTN:" target="XfG-lQ-9wD" id="MBd-5Y-c0D"/>
+                                </connections>
                             </textField>
                         </subviews>
                     </view>

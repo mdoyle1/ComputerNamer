@@ -31,13 +31,6 @@ let range = Range(uncheckedBounds: (lower: serialStart, upper: serialEnd))
 let lastSix = serialNumber[range]
 
 
-// Get last word of building name
-let buildType = buildingSorted[0]
-let split = buildType.split(separator: " ")
-let last = String(split.suffix(1).joined(separator: [" "]))
-
-
-
 //Buildings and Departments
 
 var buildingTable = [
@@ -172,6 +165,28 @@ class ViewController: NSViewController {
     @IBOutlet weak var roomNumberFLD: NSTextField!
     
     
+    
+    //Text Field Returns
+    @IBAction func computerNumber(_ sender: NSTextField) {
+        computerName.stringValue = compNumberField.stringValue
+    }
+    @IBAction func roomNumRTN(_ sender: NSTextField) {
+        computerName.stringValue = roomNumberFLD.stringValue
+    }
+    
+    
+    
+    //Global Functions
+    func clearName() {
+        computerName.stringValue = ""
+    }
+    
+    
+    
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -197,7 +212,7 @@ class ViewController: NSViewController {
     
     //Faculty Staff Check Box
     @IBAction func facultyStaffFunc(_ sender: NSButton) {
-        
+        clearName()
         setPre = "E"
         
         if chkFacultyStaff.state == NSControl.StateValue(rawValue: 1){
@@ -227,6 +242,7 @@ class ViewController: NSViewController {
     //Student Worker Check Box
     @IBAction func studentWorkFunc(_ sender: NSButton) {
         
+        clearName()
         setPre = "EDF"
         
         if chkStudentWorker.state == checked {
@@ -254,6 +270,7 @@ class ViewController: NSViewController {
     //Lab Check Box
     @IBAction func labFunc(_ sender: NSButton) {
         
+        clearName()
         setPre = "ELAB"
         
         
@@ -275,12 +292,36 @@ class ViewController: NSViewController {
     
     //Building Labs and Res Hall Pop Up Button
     @IBAction func buildingLabs(_ sender: NSPopUpButton) {
-        let prefix = buildingTable[buildingPopUp.titleOfSelectedItem!]
+        clearName()
         let compNum = compNumberField.stringValue
-        computerName.stringValue = (setPre+prefix!+compNum)
-        print (prefix as Any)
+        let buildingSelect = buildingPopUp.titleOfSelectedItem
+        let split = buildingSelect!.split(separator: " ")
+        let checkForHall = String(split.suffix(1).joined(separator: [" "]))
+        print(checkForHall)
+        
+        if checkForHall == "Hall" {
+            let prefix = buildingTable[buildingPopUp.titleOfSelectedItem!]
+            print(prefix![prefix!.startIndex])
+            roomNumberFLD.isHidden = true
+            roomNumberLBL.isHidden = true
+            computerName.stringValue = (setPre+prefix!+compNum)
+            
+        }else{
+            
+                let prefix = buildingTable[buildingPopUp.titleOfSelectedItem!]
+                let modPrefix = prefix!.dropLast()
+                roomNumberFLD.isHidden = false
+                roomNumberLBL.isHidden = false
+                let roomNum = roomNumberFLD.stringValue+"-"
+                computerName.stringValue = (setPre+modPrefix+roomNum+compNum)
+        }
+        
         
     }
+    
+
+    
+    
     
     
     
