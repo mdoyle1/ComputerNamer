@@ -24,6 +24,7 @@ var checked = NSControl.StateValue(rawValue: 1)
 var unchecked = NSControl.StateValue(rawValue: 0)
 
 
+
 // Last 6 of computer serial #
 let serialEnd = serialNumber.endIndex
 let serialStart = serialNumber.index(serialEnd, offsetBy: -6)
@@ -168,19 +169,26 @@ class ViewController: NSViewController {
     
     //Text Field Returns
     @IBAction func computerNumber(_ sender: NSTextField) {
+       
+       
+        let compNum: String? = compNumberField.stringValue
         //submit current building and roomNumber
-        let prefix = buildingTable[buildingPopUp.titleOfSelectedItem!]
-        computerName.stringValue = "ELAB"+prefix!+compNumberField.stringValue
+        let prefix: String? = buildingTable[buildingPopUp.titleOfSelectedItem!]
+        if prefix != nil {
+           computerName.stringValue = "ELAB"+prefix!+compNum!
+        }
+        
+        
     }
     
     @IBAction func roomNumRTN(_ sender: NSTextField) {
         //submit current building and computerNumber
-        
-        let prefix = buildingTable[buildingPopUp.titleOfSelectedItem!]
+        let roomNum: String? = roomNumberFLD.stringValue+"-"
+        let prefix: String? = buildingTable[buildingPopUp.titleOfSelectedItem!]
         let modPrefix = prefix!.dropLast()
-        let roomNum = roomNumberFLD.stringValue+"-"
-       
-        computerName.stringValue = "ELAB"+modPrefix+roomNum+compNumberField.stringValue
+        if modPrefix != nil {
+        computerName.stringValue = "ELAB"+modPrefix+roomNum!+compNumberField.stringValue
+        }
     }
     
     
@@ -239,7 +247,8 @@ class ViewController: NSViewController {
             chkOther.state = unchecked
             
         } else {
-            buildingLabel.isHidden = false
+            
+            
         }
     }
     
@@ -251,10 +260,10 @@ class ViewController: NSViewController {
     //Student Worker Check Box
     @IBAction func studentWorkFunc(_ sender: NSButton) {
         
-        
+        clearName()
         setPre = "EDF"
         
-        if chkStudentWorker.state == checked {
+        if chkStudentWorker.state == NSControl.StateValue(rawValue: 1){
             clearName()
             buildingPopUp.isHidden = true
             departPopUp.isHidden = false

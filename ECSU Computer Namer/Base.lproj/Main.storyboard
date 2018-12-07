@@ -771,12 +771,12 @@
                             <popUpButton verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5Ss-gI-eWJ">
                                 <rect key="frame" x="115" y="151" width="176" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="Select a department..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="8Dk-SF-CDp" id="bfk-fM-HEp">
+                                <popUpButtonCell key="cell" type="push" title="Select a department..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="8Dk-SF-CDp" id="bfk-fM-HEp">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="AIe-u8-YlC">
                                         <items>
-                                            <menuItem title="Select a department..." id="8Dk-SF-CDp">
+                                            <menuItem title="Select a department..." state="on" id="8Dk-SF-CDp">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
                                         </items>
@@ -822,12 +822,12 @@
                             <popUpButton hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MCQ-iL-FSd">
                                 <rect key="frame" x="115" y="151" width="176" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
-                                <popUpButtonCell key="cell" type="push" title="Select a building..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="H3c-1d-paB" id="8pm-jB-Egf">
+                                <popUpButtonCell key="cell" type="push" title="Select a building..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="H3c-1d-paB" id="8pm-jB-Egf">
                                     <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
                                     <font key="font" metaFont="menu"/>
                                     <menu key="menu" id="2Z5-B8-AN8">
                                         <items>
-                                            <menuItem title="Select a building..." id="H3c-1d-paB">
+                                            <menuItem title="Select a building..." state="on" id="H3c-1d-paB">
                                                 <modifierMask key="keyEquivalentModifierMask"/>
                                             </menuItem>
                                         </items>
