@@ -381,14 +381,9 @@ class ViewController: NSViewController {
                 computerName.stringValue = (setPre+prefix!+lastSix)}
           
         }else {
-            if chkOther.state == checked && scenarioPopUp.titleOfSelectedItem == "Adjunct Shared Mac"{
+            if chkOther.state == checked {
                 if prefix != nil {
                     computerName.stringValue = "EADJ"+prefix!+"-"+compNumberField.stringValue }
-            }else {
-                if chkOther.state == checked && scenarioPopUp.titleOfSelectedItem == "Student Laptop"{
-                    if prefix != nil {
-                        computerName.stringValue = "EDF"+prefix!+lastSix }
-                }
             }
         }
        
@@ -426,7 +421,7 @@ class ViewController: NSViewController {
             let prefix = buildingTable[buildingPopUp.titleOfSelectedItem!]
             let modPrefix = prefix!.dropLast()
             let roomNum = roomNumberFLD.stringValue
-            computerName.stringValue = "ELECT"+modPrefix+"-"+roomNum
+            computerName.stringValue = "ELAB"+modPrefix+"-"+roomNum
         }
         
     }
@@ -455,7 +450,6 @@ class ViewController: NSViewController {
         } else {
             if scenarioPopUp.titleOfSelectedItem == "Classroom Lectern" {
                 setPre = "ELECT"
-                clearName()
                 computerNumLBL.isHidden = true
                 compNumberField.isHidden = true
                 roomNumberFLD.isHidden = false
@@ -465,33 +459,6 @@ class ViewController: NSViewController {
                 buildingLabel.isHidden = false
                 buildingPopUp.isHidden = false
                 
-            } else {
-                
-                if scenarioPopUp.titleOfSelectedItem == "Emergency Cart Mac" {
-                    clearName()
-                    computerNumLBL.isHidden = true
-                    compNumberField.isHidden = true
-                    roomNumberFLD.isHidden = true
-                    roomNumberLBL.isHidden = true
-                    departPopUp.isHidden = true
-                    departmentLBL.isHidden = true
-                    buildingLabel.isHidden = true
-                    buildingPopUp.isHidden = true
-                    computerName.stringValue = "EDFCART"+lastSix
-                } else {
-                    if scenarioPopUp.titleOfSelectedItem == "Student Laptop" {
-                        clearName()
-                        computerNumLBL.isHidden = true
-                        compNumberField.isHidden = true
-                        roomNumberFLD.isHidden = true
-                        roomNumberLBL.isHidden = true
-                        departPopUp.isHidden = false
-                        departmentLBL.isHidden = false
-                        buildingLabel.isHidden = true
-                        buildingPopUp.isHidden = true
-                        computerName.stringValue = "EDF"+lastSix
-                    }
-                }
             }
             }
             
