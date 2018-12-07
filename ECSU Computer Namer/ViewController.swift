@@ -153,13 +153,15 @@ class ViewController: NSViewController {
     @IBOutlet weak var departmentLBL: NSTextField!
     @IBOutlet weak var computerNumLBL: NSTextField!
     @IBOutlet weak var roomNumberLBL: NSTextField!
+    @IBOutlet weak var scenarioLBL: NSTextField!
     
     
     //Pop-up Menus
     @IBOutlet weak var departPopUp: NSPopUpButton!
     @IBOutlet weak var departOptions: NSPopUpButton!
     @IBOutlet weak var buildingPopUp: NSPopUpButton!
-
+    @IBOutlet weak var scenarioPopUp: NSPopUpButton!
+    
     //Text Fields
     @IBOutlet weak var computerName: NSTextField!
     @IBOutlet weak var compNumberField: NSTextField!
@@ -170,12 +172,31 @@ class ViewController: NSViewController {
     //Text Field Returns
     @IBAction func computerNumber(_ sender: NSTextField) {
        
-       
+        if chkLab.state == checked {
         let compNum: String? = compNumberField.stringValue
-        //submit current building and roomNumber
+        let roomNum: String? = roomNumberFLD.stringValue+"-"
         let prefix: String? = buildingTable[buildingPopUp.titleOfSelectedItem!]
         if prefix != nil {
-           computerName.stringValue = "ELAB"+prefix!+compNum!
+            let modPrefix = prefix!.dropLast()
+            if modPrefix != nil {
+                computerName.stringValue = "ELAB"+modPrefix+roomNum!+compNum!
+                }
+            }
+        }
+        
+            //Check Other State
+        else{
+            if chkOther.state == checked {
+                let compNum: String? = compNumberField.stringValue
+                //submit current building and roomNumber
+                let prefix: String? = departmentTable[departOptions.titleOfSelectedItem!]
+                if prefix != nil {
+                    let modPrefix = prefix!.dropLast()
+                    if modPrefix != nil {
+                        computerName.stringValue = "EADJ"+modPrefix+"-"+compNum!
+                    }
+                }
+            }
         }
         
         
@@ -183,11 +204,20 @@ class ViewController: NSViewController {
     
     @IBAction func roomNumRTN(_ sender: NSTextField) {
         //submit current building and computerNumber
+        let compNum: String? = compNumberField.stringValue
         let roomNum: String? = roomNumberFLD.stringValue+"-"
         let prefix: String? = buildingTable[buildingPopUp.titleOfSelectedItem!]
-        let modPrefix = prefix!.dropLast()
-        if modPrefix != nil {
-        computerName.stringValue = "ELAB"+modPrefix+roomNum!+compNumberField.stringValue
+        if prefix != nil {
+             let modPrefix = prefix!.dropLast()
+             if modPrefix != nil {
+                
+                if chkOther.state == checked && scenarioPopUp.titleOfSelectedItem == "Classroom Lectern" {
+                    computerName.stringValue = "ELAB"+prefix!+roomNum!.dropLast()
+                }else{
+                    computerName.stringValue = "ELAB"+modPrefix+roomNum!+compNum!
+                    
+                }
+            }
         }
     }
     
@@ -199,7 +229,18 @@ class ViewController: NSViewController {
     }
     
     
-    
+    func otherElements() {
+        scenarioPopUp.isHidden = false
+        scenarioLBL.isHidden = false
+        roomNumberFLD.isHidden = true
+        roomNumberLBL.isHidden = true
+        computerNumLBL.isHidden = true
+        compNumberField.isHidden = true
+        buildingLabel.isHidden = true
+        buildingPopUp.isHidden = true
+        departmentLBL.isHidden = true
+        departPopUp.isHidden = true
+    }
     
     
     
@@ -231,9 +272,14 @@ class ViewController: NSViewController {
     @IBAction func facultyStaffFunc(_ sender: NSButton) {
         
         setPre = "E"
+         departPopUp.selectItem(at: 0)
+        compNumberField.stringValue = ""
         
-        if chkFacultyStaff.state == NSControl.StateValue(rawValue: 1){
+        clearName()
+        
+        if chkFacultyStaff.state == checked{
             clearName()
+            departPopUp.selectItem(at: 0)
             departmentLBL.isHidden = false
             departPopUp.isHidden = false
             buildingLabel.isHidden = true
@@ -242,29 +288,27 @@ class ViewController: NSViewController {
             compNumberField.isHidden = true
             roomNumberFLD.isHidden = true
             roomNumberLBL.isHidden = true
+            scenarioPopUp.isHidden = true
+            scenarioLBL.isHidden = true
+            
             chkLab.state = unchecked
             chkStudentWorker.state = unchecked
             chkOther.state = unchecked
-            
-        } else {
-            
-            
         }
     }
-    
-    
-    
-    
     
     
     //Student Worker Check Box
     @IBAction func studentWorkFunc(_ sender: NSButton) {
         
         clearName()
+        departPopUp.selectItem(at: 0)
+        compNumberField.stringValue = ""
         setPre = "EDF"
         
-        if chkStudentWorker.state == NSControl.StateValue(rawValue: 1){
+        if chkStudentWorker.state == checked{
             clearName()
+            departPopUp.selectItem(at: 0)
             buildingPopUp.isHidden = true
             departPopUp.isHidden = false
             departmentLBL.isHidden = false
@@ -277,24 +321,21 @@ class ViewController: NSViewController {
             chkFacultyStaff.state = unchecked
             chkLab.state = unchecked
             chkOther.state = unchecked
+            scenarioPopUp.isHidden = true
+            scenarioLBL.isHidden = true
         }
     }
     
     
-    
-    
-    
-    
-    
     //Lab Check Box
     @IBAction func labFunc(_ sender: NSButton) {
-        
-        
         setPre = "ELAB"
-        
-        
+        compNumberField.stringValue = ""
+        roomNumberFLD.stringValue = ""
+        buildingPopUp.selectItem(at: 0)
         if chkLab.state == checked {
             clearName()
+            buildingPopUp.selectItem(at: 0)
             departPopUp.isHidden = true
             buildingLabel.isHidden = false
             departmentLBL.isHidden = true
@@ -306,7 +347,46 @@ class ViewController: NSViewController {
             chkFacultyStaff.state = unchecked
             chkStudentWorker.state = unchecked
             chkOther.state = unchecked
+            scenarioPopUp.isHidden = true
+            scenarioLBL.isHidden = true
         }
+    }
+    
+    
+    //Other Check Box
+    @IBAction func chkOther(_ sender: NSButton) {
+        clearName()
+        compNumberField.stringValue = ""
+        roomNumberFLD.stringValue = ""
+        computerName.stringValue=""
+        scenarioPopUp.selectItem(at: 0)
+        if chkOther.state == checked {
+            clearName()
+            otherElements()
+            chkFacultyStaff.state = unchecked
+            chkStudentWorker.state = unchecked
+            chkLab.state = unchecked
+        }
+    }
+    
+    
+
+    //Department Selection Pop Up Button
+    @IBAction func departSelect(_ sender: NSPopUpButton) {
+        clearName()
+        let prefix = departmentTable[departOptions.titleOfSelectedItem!]
+        
+        if chkFacultyStaff.state == checked  || chkStudentWorker.state == checked || chkLab.state == checked {
+            if prefix != nil {
+                computerName.stringValue = (setPre+prefix!+lastSix)}
+          
+        }else {
+            if chkOther.state == checked {
+                if prefix != nil {
+                    computerName.stringValue = "EADJ"+prefix!+"-"+compNumberField.stringValue }
+            }
+        }
+       
     }
     
     
@@ -326,7 +406,8 @@ class ViewController: NSViewController {
             roomNumberLBL.isHidden = true
             computerName.stringValue = (setPre+prefix!+compNum)
             
-        }else{
+        }
+            else{
             
                 let prefix = buildingTable[buildingPopUp.titleOfSelectedItem!]
                 let modPrefix = prefix!.dropLast()
@@ -334,26 +415,55 @@ class ViewController: NSViewController {
                 roomNumberLBL.isHidden = false
                 let roomNum = roomNumberFLD.stringValue+"-"
                 computerName.stringValue = (setPre+modPrefix+roomNum+compNum)
-        }
+                }
         
+        if chkOther.state == checked && scenarioPopUp.titleOfSelectedItem == "Classroom Lectern" {
+            let prefix = buildingTable[buildingPopUp.titleOfSelectedItem!]
+            let modPrefix = prefix!.dropLast()
+            let roomNum = roomNumberFLD.stringValue
+            computerName.stringValue = "ELAB"+modPrefix+"-"+roomNum
+        }
         
     }
     
 
-    
-    
-    
-    
-    
-    //Department Selection Pop Up Button
-    @IBAction func departSelect(_ sender: NSPopUpButton) {
-       // var department = departOptions.titleOfSelectedItem
-        let prefix = departmentTable[departOptions.titleOfSelectedItem!]
-       
-        computerName.stringValue = (setPre+prefix!+lastSix )
-        print (prefix as Any)
+//Scenario Pop-Up Button
+    @IBAction func scenarioPopUp(_ sender: NSPopUpButton) {
+        
+        if scenarioPopUp.titleOfSelectedItem == "Select a Scenario..."{
+      clearName()
+      otherElements()
+        }else {
+        clearName()
+        if scenarioPopUp.titleOfSelectedItem == "Adjunct Shared Mac" {
+            clearName()
+            setPre = "EADJ"
+            let compNum = compNumberField.stringValue
+            computerNumLBL.isHidden = false
+            compNumberField.isHidden = false
+            departPopUp.isHidden = false
+            departmentLBL.isHidden = false
+            buildingLabel.isHidden = true
+            buildingPopUp.isHidden = true
+            roomNumberFLD.isHidden = true
+            roomNumberLBL.isHidden = true
+        } else {
+            if scenarioPopUp.titleOfSelectedItem == "Classroom Lectern" {
+                setPre = "ELECT"
+                computerNumLBL.isHidden = true
+                compNumberField.isHidden = true
+                roomNumberFLD.isHidden = false
+                roomNumberLBL.isHidden = false
+                departPopUp.isHidden = true
+                departmentLBL.isHidden = true
+                buildingLabel.isHidden = false
+                buildingPopUp.isHidden = false
+                
+            }
+            }
+            
+        }
     }
-    
     
     
     //Set Computer Name!!

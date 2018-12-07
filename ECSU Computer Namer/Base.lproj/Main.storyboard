@@ -756,6 +756,9 @@
                                     <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
                                     <font key="font" metaFont="system"/>
                                 </buttonCell>
+                                <connections>
+                                    <action selector="chkOther:" target="XfG-lQ-9wD" id="Oog-UG-bjK"/>
+                                </connections>
                             </button>
                             <button verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OSn-cf-bBn">
                                 <rect key="frame" x="30" y="217" width="99" height="18"/>
@@ -879,6 +882,35 @@
                                     <action selector="roomNumRTN:" target="XfG-lQ-9wD" id="MBd-5Y-c0D"/>
                                 </connections>
                             </textField>
+                            <textField hidden="YES" horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jjt-a8-3si">
+                                <rect key="frame" x="309" y="158" width="61" height="17"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <textFieldCell key="cell" lineBreakMode="clipping" title="Scenario:" id="BvQ-44-D1Z">
+                                    <font key="font" metaFont="system"/>
+                                    <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                                    <color key="backgroundColor" name="textBackgroundColor" catalog="System" colorSpace="catalog"/>
+                                </textFieldCell>
+                            </textField>
+                            <popUpButton hidden="YES" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5MU-Is-VvE">
+                                <rect key="frame" x="379" y="153" width="176" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <popUpButtonCell key="cell" type="push" title="Select a Scenario..." bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="ALF-X5-T12" id="Ffv-39-7j9">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="FBx-rd-XPb">
+                                        <items>
+                                            <menuItem title="Select a Scenario..." state="on" id="ALF-X5-T12"/>
+                                            <menuItem title="Adjunct Shared Mac" id="kBb-9S-RVR"/>
+                                            <menuItem title="Classroom Lectern" id="46g-vv-D2m"/>
+                                            <menuItem title="Emergency Cart Mac" id="5Aj-bV-gew" userLabel="Emergency Cart PC"/>
+                                            <menuItem title="Student Laptop" id="JaQ-9x-XnC"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                                <connections>
+                                    <action selector="scenarioPopUp:" target="XfG-lQ-9wD" id="gC4-O0-9mE"/>
+                                </connections>
+                            </popUpButton>
                         </subviews>
                     </view>
                     <connections>
@@ -899,6 +931,8 @@
                         <outlet property="nameProgress" destination="rk6-M8-E3s" id="zbQ-0l-fg5"/>
                         <outlet property="roomNumberFLD" destination="nGg-i0-nAq" id="KQm-iO-8Fx"/>
                         <outlet property="roomNumberLBL" destination="srR-35-WOv" id="JXA-2N-3Ve"/>
+                        <outlet property="scenarioLBL" destination="jjt-a8-3si" id="GNC-YA-E4a"/>
+                        <outlet property="scenarioPopUp" destination="5MU-Is-VvE" id="9tE-uF-QYl"/>
                     </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
