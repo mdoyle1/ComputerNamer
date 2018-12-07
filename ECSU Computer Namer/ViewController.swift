@@ -168,10 +168,19 @@ class ViewController: NSViewController {
     
     //Text Field Returns
     @IBAction func computerNumber(_ sender: NSTextField) {
-        computerName.stringValue = compNumberField.stringValue
+        //submit current building and roomNumber
+        let prefix = buildingTable[buildingPopUp.titleOfSelectedItem!]
+        computerName.stringValue = "ELAB"+prefix!+compNumberField.stringValue
     }
+    
     @IBAction func roomNumRTN(_ sender: NSTextField) {
-        computerName.stringValue = roomNumberFLD.stringValue
+        //submit current building and computerNumber
+        
+        let prefix = buildingTable[buildingPopUp.titleOfSelectedItem!]
+        let modPrefix = prefix!.dropLast()
+        let roomNum = roomNumberFLD.stringValue+"-"
+       
+        computerName.stringValue = "ELAB"+modPrefix+roomNum+compNumberField.stringValue
     }
     
     
@@ -212,11 +221,11 @@ class ViewController: NSViewController {
     
     //Faculty Staff Check Box
     @IBAction func facultyStaffFunc(_ sender: NSButton) {
-        clearName()
+        
         setPre = "E"
         
         if chkFacultyStaff.state == NSControl.StateValue(rawValue: 1){
-            
+            clearName()
             departmentLBL.isHidden = false
             departPopUp.isHidden = false
             buildingLabel.isHidden = true
@@ -242,10 +251,11 @@ class ViewController: NSViewController {
     //Student Worker Check Box
     @IBAction func studentWorkFunc(_ sender: NSButton) {
         
-        clearName()
+        
         setPre = "EDF"
         
         if chkStudentWorker.state == checked {
+            clearName()
             buildingPopUp.isHidden = true
             departPopUp.isHidden = false
             departmentLBL.isHidden = false
@@ -270,11 +280,12 @@ class ViewController: NSViewController {
     //Lab Check Box
     @IBAction func labFunc(_ sender: NSButton) {
         
-        clearName()
+        
         setPre = "ELAB"
         
         
         if chkLab.state == checked {
+            clearName()
             departPopUp.isHidden = true
             buildingLabel.isHidden = false
             departmentLBL.isHidden = true
