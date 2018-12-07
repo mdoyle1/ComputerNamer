@@ -403,8 +403,19 @@ class ViewController: NSViewController {
         let split = buildingSelect!.split(separator: " ")
         let checkForHall = String(split.suffix(1).joined(separator: [" "]))
         print(checkForHall)
+        print(buildingPopUp.titleOfSelectedItem)
         
-        if checkForHall == "Hall" {
+        let ecsuResHalls = ["Burnap Hall", "Burr Hall", "Constitution Hall", "Crandall Hall", "High Rise", "Laurel Hall", "Mead Hall", "Niejadik Hall", "Noble Hall", "Nutmeg Hall", "Occum Hall", "Winthrop Hall"]
+      
+        for ecsuResHall in ecsuResHalls {
+            print(ecsuResHall)
+        }
+        var resHallCount = ecsuResHalls.count
+        print(resHallCount)
+        
+        
+        for ecsuResHall in ecsuResHalls {
+        if buildingPopUp.titleOfSelectedItem == ecsuResHall {
             let prefix = buildingTable[buildingPopUp.titleOfSelectedItem!]
             print(prefix![prefix!.startIndex])
             roomNumberFLD.isHidden = true
@@ -413,7 +424,7 @@ class ViewController: NSViewController {
             
         }
             else{
-            
+            print(ecsuResHall)
                 let prefix = buildingTable[buildingPopUp.titleOfSelectedItem!]
                 let modPrefix = prefix!.dropLast()
                 roomNumberFLD.isHidden = false
@@ -421,7 +432,7 @@ class ViewController: NSViewController {
                 let roomNum = roomNumberFLD.stringValue+"-"
                 computerName.stringValue = (setPre+modPrefix+roomNum+compNum)
                 }
-        
+        }
         if chkOther.state == checked && scenarioPopUp.titleOfSelectedItem == "Classroom Lectern" {
             let prefix = buildingTable[buildingPopUp.titleOfSelectedItem!]
             let modPrefix = prefix!.dropLast()
