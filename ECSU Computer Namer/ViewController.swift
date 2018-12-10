@@ -158,6 +158,8 @@ class ViewController: NSViewController {
     @IBOutlet weak var compNumberField: NSTextField!
     @IBOutlet weak var roomNumberFLD: NSTextField!
     
+    //Menu Bar
+    
     
     
     //Text Field Returns
@@ -442,13 +444,7 @@ class ViewController: NSViewController {
                         buildingLabel.isHidden = true
                         buildingPopUp.isHidden = true
                         computerName.stringValue = "EDF"+lastSix
-                    }
-                }
-            }
-            }
-            
-        }
-    }
+                    }}}}}}
     
     
     //Set Computer Name!!

@@ -11,6 +11,9 @@
 		7F534C1C21B5C5B300064634 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F534C1B21B5C5B300064634 /* ViewController.swift */; };
 		7F534C1E21B5C5B300064634 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F534C1D21B5C5B300064634 /* Assets.xcassets */; };
 		7F534C2121B5C5B300064634 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F534C1F21B5C5B300064634 /* Main.storyboard */; };
+		7F55A1A021BEB9BF0064F825 /* ECSUNamer.icns in Resources */ = {isa = PBXBuildFile; fileRef = 7F55A19F21BEB9BF0064F825 /* ECSUNamer.icns */; };
+		7F602BED21BED67800031518 /* Help.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F602BEC21BED67800031518 /* Help.png */; };
+		7F602BEF21BEDED000031518 /* computerNames.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F602BEE21BEDED000031518 /* computerNames.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +24,9 @@
 		7F534C2021B5C5B300064634 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7F534C2221B5C5B300064634 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		7F534C2321B5C5B300064634 /* ECSU_Computer_Namer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ECSU_Computer_Namer.entitlements; sourceTree = "<group>"; };
+		7F55A19F21BEB9BF0064F825 /* ECSUNamer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ECSUNamer.icns; sourceTree = "<group>"; };
+		7F602BEC21BED67800031518 /* Help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Help.png; sourceTree = "<group>"; };
+		7F602BEE21BEDED000031518 /* computerNames.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = computerNames.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,14 +59,25 @@
 		7F534C1821B5C5B300064634 /* ECSU Computer Namer */ = {
 			isa = PBXGroup;
 			children = (
+				7F55A19F21BEB9BF0064F825 /* ECSUNamer.icns */,
 				7F534C1921B5C5B300064634 /* AppDelegate.swift */,
+				7F602BEB21BED66600031518 /* Content */,
 				7F534C1B21B5C5B300064634 /* ViewController.swift */,
 				7F534C1D21B5C5B300064634 /* Assets.xcassets */,
 				7F534C1F21B5C5B300064634 /* Main.storyboard */,
+				7F602BEE21BEDED000031518 /* computerNames.swift */,
 				7F534C2221B5C5B300064634 /* Info.plist */,
 				7F534C2321B5C5B300064634 /* ECSU_Computer_Namer.entitlements */,
 			);
 			path = "ECSU Computer Namer";
+			sourceTree = "<group>";
+		};
+		7F602BEB21BED66600031518 /* Content */ = {
+			isa = PBXGroup;
+			children = (
+				7F602BEC21BED67800031518 /* Help.png */,
+			);
+			path = Content;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -126,8 +143,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F55A1A021BEB9BF0064F825 /* ECSUNamer.icns in Resources */,
 				7F534C1E21B5C5B300064634 /* Assets.xcassets in Resources */,
 				7F534C2121B5C5B300064634 /* Main.storyboard in Resources */,
+				7F602BED21BED67800031518 /* Help.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +159,7 @@
 			files = (
 				7F534C1C21B5C5B300064634 /* ViewController.swift in Sources */,
 				7F534C1A21B5C5B300064634 /* AppDelegate.swift in Sources */,
+				7F602BEF21BEDED000031518 /* computerNames.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -283,9 +303,10 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.doylema.ECSU-Computer-Namer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -300,9 +321,10 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.doylema.ECSU-Computer-Namer";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
