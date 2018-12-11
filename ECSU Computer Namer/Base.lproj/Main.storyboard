@@ -73,7 +73,8 @@
                                     <items>
                                         <menuItem title="ECSU Computer Namer Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
-                                                <action selector="computerNamesHelp:" target="Voe-Tx-rLC" id="iKo-go-OJC"/>
+                                                <action selector="showNaming:" target="Voe-Tx-rLC" id="Zy3-ZA-Sqw"/>
+                                                <segue destination="T4t-4C-nrY" kind="show" id="Yqr-1W-q9z"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -85,7 +86,11 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ECSU_Computer_Namer" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="ECSU_Computer_Namer" customModuleProvider="target">
+                    <connections>
+                        <outlet property="namingConvention" destination="FKE-Sm-Kum" id="WsD-DS-fmL"/>
+                    </connections>
+                </customObject>
                 <customObject id="YLy-65-1bz" customClass="NSFontManager"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -391,7 +396,43 @@
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="60" y="787"/>
+            <point key="canvasLocation" x="75" y="650"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="Wpe-gR-Hw8">
+            <objects>
+                <viewController id="MBc-Ju-gnj" sceneMemberID="viewController">
+                    <view key="view" id="a4f-cm-dGe">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </view>
+                </viewController>
+                <customObject id="fCE-JE-OFO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="851" y="902"/>
+        </scene>
+        <!--Help-->
+        <scene sceneID="XnV-AV-S6R">
+            <objects>
+                <viewController title="Help" id="T4t-4C-nrY" sceneMemberID="viewController">
+                    <view key="view" id="Bfh-In-3Zs">
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="482"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dFi-pk-iar">
+                                <rect key="frame" x="-45" y="0.0" width="582" height="482"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="Help" id="M9A-FX-UBa"/>
+                            </imageView>
+                        </subviews>
+                    </view>
+                </viewController>
+                <customObject id="BfJ-IS-p7w" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="851" y="440"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Help" width="656" height="720"/>
+    </resources>
 </document>
