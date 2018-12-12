@@ -7,31 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F534C1A21B5C5B300064634 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F534C1921B5C5B300064634 /* AppDelegate.swift */; };
-		7F534C1C21B5C5B300064634 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F534C1B21B5C5B300064634 /* ViewController.swift */; };
-		7FD4E89021C001E80042103E /* namingData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4E88F21C001E80042103E /* namingData.swift */; };
-		7FD4E8DC21C198510042103E /* enrollmentApps.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FD4E8B921C049330042103E /* enrollmentApps.png */; };
-		7FD4E8DD21C198550042103E /* student_provision.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FD4E8B721C046B70042103E /* student_provision.png */; };
-		7FD4E8DE21C198580042103E /* Help.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F602BEC21BED67800031518 /* Help.png */; };
-		7FD4E8DF21C1989F0042103E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F534C1F21B5C5B300064634 /* Main.storyboard */; };
+		7FD4E8C821C176970042103E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4E8C721C176970042103E /* AppDelegate.swift */; };
+		7FD4E8CA21C176970042103E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD4E8C921C176970042103E /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		7F534C1621B5C5B300064634 /* ECSU Computer Namer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ECSU Computer Namer.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F534C1921B5C5B300064634 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		7F534C1B21B5C5B300064634 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		7F534C2021B5C5B300064634 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		7F534C2221B5C5B300064634 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		7F534C2321B5C5B300064634 /* ECSU_Computer_Namer.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = ECSU_Computer_Namer.entitlements; sourceTree = "<group>"; };
-		7F55A19F21BEB9BF0064F825 /* ECSUNamer.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = ECSUNamer.icns; sourceTree = "<group>"; };
-		7F602BEC21BED67800031518 /* Help.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Help.png; sourceTree = "<group>"; };
-		7FD4E88F21C001E80042103E /* namingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = namingData.swift; sourceTree = "<group>"; };
-		7FD4E8B721C046B70042103E /* student_provision.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = student_provision.png; sourceTree = "<group>"; };
-		7FD4E8B921C049330042103E /* enrollmentApps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enrollmentApps.png; sourceTree = "<group>"; };
+		7FD4E8C421C176970042103E /* Project5.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project5.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		7FD4E8C721C176970042103E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		7FD4E8C921C176970042103E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		7FD4E8CB21C176980042103E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7FD4E8CE21C176980042103E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		7FD4E8D021C176980042103E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7FD4E8D121C176980042103E /* Project5.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Project5.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		7F534C1321B5C5B300064634 /* Frameworks */ = {
+		7FD4E8C121C176970042103E /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -41,88 +32,76 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		7F534C0D21B5C5B300064634 = {
+		7FD4E8BB21C176970042103E = {
 			isa = PBXGroup;
 			children = (
-				7F534C1821B5C5B300064634 /* ECSU Computer Namer */,
-				7F534C1721B5C5B300064634 /* Products */,
+				7FD4E8C621C176970042103E /* Project5 */,
+				7FD4E8C521C176970042103E /* Products */,
 			);
 			sourceTree = "<group>";
 		};
-		7F534C1721B5C5B300064634 /* Products */ = {
+		7FD4E8C521C176970042103E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				7F534C1621B5C5B300064634 /* ECSU Computer Namer.app */,
+				7FD4E8C421C176970042103E /* Project5.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		7F534C1821B5C5B300064634 /* ECSU Computer Namer */ = {
+		7FD4E8C621C176970042103E /* Project5 */ = {
 			isa = PBXGroup;
 			children = (
-				7F55A19F21BEB9BF0064F825 /* ECSUNamer.icns */,
-				7F534C1921B5C5B300064634 /* AppDelegate.swift */,
-				7F602BEB21BED66600031518 /* Content */,
-				7F534C1B21B5C5B300064634 /* ViewController.swift */,
-				7F534C1F21B5C5B300064634 /* Main.storyboard */,
-				7F534C2221B5C5B300064634 /* Info.plist */,
-				7F534C2321B5C5B300064634 /* ECSU_Computer_Namer.entitlements */,
-				7FD4E88F21C001E80042103E /* namingData.swift */,
+				7FD4E8C721C176970042103E /* AppDelegate.swift */,
+				7FD4E8C921C176970042103E /* ViewController.swift */,
+				7FD4E8CB21C176980042103E /* Assets.xcassets */,
+				7FD4E8CD21C176980042103E /* Main.storyboard */,
+				7FD4E8D021C176980042103E /* Info.plist */,
+				7FD4E8D121C176980042103E /* Project5.entitlements */,
 			);
-			path = "ECSU Computer Namer";
-			sourceTree = "<group>";
-		};
-		7F602BEB21BED66600031518 /* Content */ = {
-			isa = PBXGroup;
-			children = (
-				7FD4E8B921C049330042103E /* enrollmentApps.png */,
-				7FD4E8B721C046B70042103E /* student_provision.png */,
-				7F602BEC21BED67800031518 /* Help.png */,
-			);
-			path = Content;
+			path = Project5;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		7F534C1521B5C5B300064634 /* ECSU Computer Namer */ = {
+		7FD4E8C321C176970042103E /* Project5 */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 7F534C2621B5C5B300064634 /* Build configuration list for PBXNativeTarget "ECSU Computer Namer" */;
+			buildConfigurationList = 7FD4E8D421C176980042103E /* Build configuration list for PBXNativeTarget "Project5" */;
 			buildPhases = (
-				7F534C1221B5C5B300064634 /* Sources */,
-				7F534C1321B5C5B300064634 /* Frameworks */,
-				7F534C1421B5C5B300064634 /* Resources */,
+				7FD4E8C021C176970042103E /* Sources */,
+				7FD4E8C121C176970042103E /* Frameworks */,
+				7FD4E8C221C176970042103E /* Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
 			);
-			name = "ECSU Computer Namer";
-			productName = "ECSU Computer Namer";
-			productReference = 7F534C1621B5C5B300064634 /* ECSU Computer Namer.app */;
+			name = Project5;
+			productName = Project5;
+			productReference = 7FD4E8C421C176970042103E /* Project5.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		7F534C0E21B5C5B300064634 /* Project object */ = {
+		7FD4E8BC21C176970042103E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1010;
 				LastUpgradeCheck = 1010;
 				ORGANIZATIONNAME = "Doyle, Mark(Information Technology Services)";
 				TargetAttributes = {
-					7F534C1521B5C5B300064634 = {
+					7FD4E8C321C176970042103E = {
 						CreatedOnToolsVersion = 10.1;
 						SystemCapabilities = {
 							com.apple.Sandbox = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
 				};
 			};
-			buildConfigurationList = 7F534C1121B5C5B300064634 /* Build configuration list for PBXProject "ECSU Computer Namer" */;
+			buildConfigurationList = 7FD4E8BF21C176970042103E /* Build configuration list for PBXProject "Project5" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -130,48 +109,43 @@
 				en,
 				Base,
 			);
-			mainGroup = 7F534C0D21B5C5B300064634;
-			productRefGroup = 7F534C1721B5C5B300064634 /* Products */;
+			mainGroup = 7FD4E8BB21C176970042103E;
+			productRefGroup = 7FD4E8C521C176970042103E /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				7F534C1521B5C5B300064634 /* ECSU Computer Namer */,
+				7FD4E8C321C176970042103E /* Project5 */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		7F534C1421B5C5B300064634 /* Resources */ = {
+		7FD4E8C221C176970042103E /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7FD4E8DE21C198580042103E /* Help.png in Resources */,
-				7FD4E8DD21C198550042103E /* student_provision.png in Resources */,
-				7FD4E8DC21C198510042103E /* enrollmentApps.png in Resources */,
-				7FD4E8DF21C1989F0042103E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		7F534C1221B5C5B300064634 /* Sources */ = {
+		7FD4E8C021C176970042103E /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7F534C1C21B5C5B300064634 /* ViewController.swift in Sources */,
-				7F534C1A21B5C5B300064634 /* AppDelegate.swift in Sources */,
-				7FD4E89021C001E80042103E /* namingData.swift in Sources */,
+				7FD4E8CA21C176970042103E /* ViewController.swift in Sources */,
+				7FD4E8C821C176970042103E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		7F534C1F21B5C5B300064634 /* Main.storyboard */ = {
+		7FD4E8CD21C176980042103E /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				7F534C2021B5C5B300064634 /* Base */,
+				7FD4E8CE21C176980042103E /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -179,7 +153,7 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		7F534C2421B5C5B300064634 /* Debug */ = {
+		7FD4E8D221C176980042103E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -211,7 +185,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
@@ -240,7 +214,7 @@
 			};
 			name = Debug;
 		};
-		7F534C2521B5C5B300064634 /* Release */ = {
+		7FD4E8D321C176980042103E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -272,7 +246,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Mac Developer";
 				COPY_PHASE_STRIP = NO;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
@@ -294,64 +268,66 @@
 			};
 			name = Release;
 		};
-		7F534C2721B5C5B300064634 /* Debug */ = {
+		7FD4E8D521C176980042103E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Project5/Project5.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "ECSU Computer Namer/Info.plist";
+				DEVELOPMENT_TEAM = 8K6TR7WW7Q;
+				INFOPLIST_FILE = Project5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.doylema.ECSU-Computer-Namer";
+				PRODUCT_BUNDLE_IDENTIFIER = com.doylema.Project5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Debug;
 		};
-		7F534C2821B5C5B300064634 /* Release */ = {
+		7FD4E8D621C176980042103E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Project5/Project5.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				INFOPLIST_FILE = "ECSU Computer Namer/Info.plist";
+				DEVELOPMENT_TEAM = 8K6TR7WW7Q;
+				INFOPLIST_FILE = Project5/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MACOSX_DEPLOYMENT_TARGET = 10.11;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.doylema.ECSU-Computer-Namer";
+				PRODUCT_BUNDLE_IDENTIFIER = com.doylema.Project5;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
+				SWIFT_VERSION = 4.2;
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		7F534C1121B5C5B300064634 /* Build configuration list for PBXProject "ECSU Computer Namer" */ = {
+		7FD4E8BF21C176970042103E /* Build configuration list for PBXProject "Project5" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7F534C2421B5C5B300064634 /* Debug */,
-				7F534C2521B5C5B300064634 /* Release */,
+				7FD4E8D221C176980042103E /* Debug */,
+				7FD4E8D321C176980042103E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		7F534C2621B5C5B300064634 /* Build configuration list for PBXNativeTarget "ECSU Computer Namer" */ = {
+		7FD4E8D421C176980042103E /* Build configuration list for PBXNativeTarget "Project5" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				7F534C2721B5C5B300064634 /* Debug */,
-				7F534C2821B5C5B300064634 /* Release */,
+				7FD4E8D521C176980042103E /* Debug */,
+				7FD4E8D621C176980042103E /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
-	rootObject = 7F534C0E21B5C5B300064634 /* Project object */;
+	rootObject = 7FD4E8BC21C176970042103E /* Project object */;
 }

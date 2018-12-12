@@ -74,7 +74,20 @@
                                         <menuItem title="ECSU Computer Namer Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showNaming:" target="Voe-Tx-rLC" id="Zy3-ZA-Sqw"/>
-                                                <segue destination="T4t-4C-nrY" kind="show" id="Yqr-1W-q9z"/>
+                                                <segue destination="T4t-4C-nrY" kind="show" id="DCb-AE-gXy"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Enrollment Apps" id="jcH-GA-Dg2" userLabel="Enrollment Apps">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <action selector="showNaming:" target="Voe-Tx-rLC" id="GGQ-X2-izo"/>
+                                                <segue destination="GWU-jZ-qUF" kind="show" id="aE5-kp-1sh"/>
+                                            </connections>
+                                        </menuItem>
+                                        <menuItem title="Student Provision Script" id="VkK-bM-Lty">
+                                            <modifierMask key="keyEquivalentModifierMask"/>
+                                            <connections>
+                                                <segue destination="MBc-Ju-gnj" kind="show" id="uyu-1q-wkh"/>
                                             </connections>
                                         </menuItem>
                                     </items>
@@ -118,6 +131,33 @@
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="250"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="qnj-yV-NY4">
+            <objects>
+                <viewController id="GWU-jZ-qUF" sceneMemberID="viewController">
+                    <view key="view" id="g0S-58-Ddy">
+                        <rect key="frame" x="0.0" y="0.0" width="450" height="300"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="omW-G9-PZP">
+                                <rect key="frame" x="36" y="11" width="388" height="278"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="388" id="ez0-Ne-fTX"/>
+                                    <constraint firstAttribute="height" constant="278" id="wcS-yS-8R7"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="enrollmentApps" id="QDB-vN-udQ"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="omW-G9-PZP" firstAttribute="centerY" secondItem="g0S-58-Ddy" secondAttribute="centerY" id="FLJ-8k-V5P"/>
+                            <constraint firstItem="omW-G9-PZP" firstAttribute="leading" secondItem="g0S-58-Ddy" secondAttribute="leading" constant="36" id="jUM-y7-Yyr"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <customObject id="1BR-rd-d4C" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1128" y="583"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
@@ -398,29 +438,43 @@
             </objects>
             <point key="canvasLocation" x="75" y="650"/>
         </scene>
-        <!--View Controller-->
+        <!--Student Provision-->
         <scene sceneID="Wpe-gR-Hw8">
             <objects>
-                <viewController id="MBc-Ju-gnj" sceneMemberID="viewController">
+                <viewController title="Student Provision" id="MBc-Ju-gnj" sceneMemberID="viewController">
                     <view key="view" id="a4f-cm-dGe">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="500"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="f8Q-QG-ILd">
+                                <rect key="frame" x="-95" y="22" width="681" height="458"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="681" id="H5X-X3-5M4"/>
+                                    <constraint firstAttribute="height" constant="458" id="OI3-5N-YRe"/>
+                                </constraints>
+                                <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" image="student_provision" id="IUZ-Dq-gmV"/>
+                            </imageView>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="f8Q-QG-ILd" firstAttribute="leading" secondItem="a4f-cm-dGe" secondAttribute="leading" constant="-95" id="Avx-8n-jAK"/>
+                            <constraint firstItem="f8Q-QG-ILd" firstAttribute="top" secondItem="a4f-cm-dGe" secondAttribute="top" constant="20" symbolic="YES" id="L68-a6-xCO"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <customObject id="fCE-JE-OFO" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="851" y="902"/>
+            <point key="canvasLocation" x="634" y="607"/>
         </scene>
         <!--Help-->
         <scene sceneID="XnV-AV-S6R">
             <objects>
                 <viewController title="Help" id="T4t-4C-nrY" sceneMemberID="viewController">
                     <view key="view" id="Bfh-In-3Zs">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="482"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="469"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <subviews>
                             <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dFi-pk-iar">
-                                <rect key="frame" x="-45" y="0.0" width="582" height="482"/>
+                                <rect key="frame" x="-51" y="0.0" width="582" height="469"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                                 <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyUpOrDown" image="Help" id="M9A-FX-UBa"/>
                             </imageView>
@@ -429,10 +483,12 @@
                 </viewController>
                 <customObject id="BfJ-IS-p7w" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="851" y="440"/>
+            <point key="canvasLocation" x="1045" y="103"/>
         </scene>
     </scenes>
     <resources>
         <image name="Help" width="656" height="720"/>
+        <image name="enrollmentApps" width="483" height="357"/>
+        <image name="student_provision" width="488" height="578"/>
     </resources>
 </document>
