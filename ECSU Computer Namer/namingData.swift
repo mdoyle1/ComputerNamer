@@ -100,3 +100,6 @@ var departmentTable = [
 
 //Dorms!
 let ecsuResHalls = ["Burnap Hall", "Burr Hall", "Constitution Hall", "Crandall Hall", "High Rise", "Laurel Hall", "Mead Hall", "Niejadik Hall", "Noble Hall", "Nutmeg Hall", "Occum Hall", "Winthrop Hall"]
+
+//Scenarios..
+let scenarios = ["Adjunct Shared Mac", "Classroom Lectern", "Emergency Cart Mac", "Student Laptop"]

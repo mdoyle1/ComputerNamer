@@ -67,6 +67,7 @@ class ViewController: NSViewController {
     @IBOutlet weak var roomNumberFLD: NSTextField!
     
     //Menu Bar
+
     
     
     
@@ -89,10 +90,7 @@ class ViewController: NSViewController {
                 let compNum: String? = compNumberField.stringValue
                 //submit current building and roomNumber
                 let prefix: String? = departmentTable[departOptions.titleOfSelectedItem!]
-                if prefix != nil {
-                    let modPrefix = prefix!.dropLast()
-                    if modPrefix != nil {
-                        computerName.stringValue = "EADJ"+modPrefix+"-"+compNum!}}}}
+                computerName.stringValue = "EADJ"+prefix!+"-"+compNum!}}
     }
     
     
@@ -106,7 +104,7 @@ class ViewController: NSViewController {
              let modPrefix = prefix!.dropLast()
              if modPrefix != nil {
                 if chkOther.state == checked && scenarioPopUp.titleOfSelectedItem == "Classroom Lectern" {
-                    computerName.stringValue = "ELAB"+prefix!+roomNum!.dropLast()}
+                    computerName.stringValue = "ELECT"+prefix!+roomNum!.dropLast()}
                 else{computerName.stringValue = "ELAB"+modPrefix+roomNum!+compNum!}}}}
     
     
