@@ -14,6 +14,8 @@
 		7FD4E8DD21C198550042103E /* student_provision.png in Resources */ = {isa = PBXBuildFile; fileRef = 7FD4E8B721C046B70042103E /* student_provision.png */; };
 		7FD4E8DE21C198580042103E /* Help.png in Resources */ = {isa = PBXBuildFile; fileRef = 7F602BEC21BED67800031518 /* Help.png */; };
 		7FD4E8DF21C1989F0042103E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7F534C1F21B5C5B300064634 /* Main.storyboard */; };
+		7FF6E0A321C8259C00CACE08 /* icons.iconset in Resources */ = {isa = PBXBuildFile; fileRef = 7FF6E0A521C8259C00CACE08 /* icons.iconset */; };
+		7FF6E0A721C825AC00CACE08 /* Images-2.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7FF6E0A621C825AC00CACE08 /* Images-2.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +30,8 @@
 		7FD4E88F21C001E80042103E /* namingData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = namingData.swift; sourceTree = "<group>"; };
 		7FD4E8B721C046B70042103E /* student_provision.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = student_provision.png; sourceTree = "<group>"; };
 		7FD4E8B921C049330042103E /* enrollmentApps.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = enrollmentApps.png; sourceTree = "<group>"; };
+		7FF6E0A421C8259C00CACE08 /* Base */ = {isa = PBXFileReference; lastKnownFileType = folder.iconset; name = Base; path = Base.lproj/icons.iconset; sourceTree = "<group>"; };
+		7FF6E0A621C825AC00CACE08 /* Images-2.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Images-2.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,7 +64,7 @@
 		7F534C1821B5C5B300064634 /* ECSU Computer Namer */ = {
 			isa = PBXGroup;
 			children = (
-				7F55A19F21BEB9BF0064F825 /* ECSUNamer.icns */,
+				7FF6E0A521C8259C00CACE08 /* icons.iconset */,
 				7F534C1921B5C5B300064634 /* AppDelegate.swift */,
 				7F602BEB21BED66600031518 /* Content */,
 				7F534C1B21B5C5B300064634 /* ViewController.swift */,
@@ -68,6 +72,8 @@
 				7F534C2221B5C5B300064634 /* Info.plist */,
 				7F534C2321B5C5B300064634 /* ECSU_Computer_Namer.entitlements */,
 				7FD4E88F21C001E80042103E /* namingData.swift */,
+				7F55A19F21BEB9BF0064F825 /* ECSUNamer.icns */,
+				7FF6E0A621C825AC00CACE08 /* Images-2.xcassets */,
 			);
 			path = "ECSU Computer Namer";
 			sourceTree = "<group>";
@@ -145,7 +151,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7FF6E0A321C8259C00CACE08 /* icons.iconset in Resources */,
 				7FD4E8DE21C198580042103E /* Help.png in Resources */,
+				7FF6E0A721C825AC00CACE08 /* Images-2.xcassets in Resources */,
 				7FD4E8DD21C198550042103E /* student_provision.png in Resources */,
 				7FD4E8DC21C198510042103E /* enrollmentApps.png in Resources */,
 				7FD4E8DF21C1989F0042103E /* Main.storyboard in Resources */,
@@ -174,6 +182,14 @@
 				7F534C2021B5C5B300064634 /* Base */,
 			);
 			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		7FF6E0A521C8259C00CACE08 /* icons.iconset */ = {
+			isa = PBXVariantGroup;
+			children = (
+				7FF6E0A421C8259C00CACE08 /* Base */,
+			);
+			name = icons.iconset;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
